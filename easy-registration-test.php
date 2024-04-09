@@ -6,6 +6,9 @@ Version: 1.0
 Author: Halyna Yampolska
 */
 
+//preventing direct access to PHP files
+defined( 'ABSPATH' ) || exit;
+
 function add_cv_form_script() {
     wp_enqueue_script( 'cv-form-script', plugin_dir_url( __FILE__ ) . 'js/cv-form-script.js', array( 'jquery' ), '1.0', true );
     wp_localize_script( 'cv-form-script', 'ajaxurl', admin_url( 'admin-ajax.php' ) ); // Push admin-ajax.php trougth var ajaxurl
